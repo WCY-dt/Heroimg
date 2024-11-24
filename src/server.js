@@ -12,7 +12,7 @@ app.get('/', (_, res) => {
 app.get('/hero', async (req, res) => {
     const title = req.query.title || 'NEED A TITLE'
     const subTitle = req.query.subTitle || null
-    const style = req.query.style || 'blurry-gradient'
+    const style = req.query.style || null
     const shape = req.query.shape || '16:9'
     const fontSize = req.query.fontSize || 96
     const subFontSize = req.query.subFontSize || fontSize / 2
@@ -71,8 +71,9 @@ app.get('/hero', async (req, res) => {
     if (backgroundImages.includes(style)) {
         backgroundImage = `./src/assets/image/${style}.svg`
     } else {
-        console.error('Invalid style:', style);
-        backgroundImage = './src/assets/image/blurry-gradient.svg';
+        const randomIndex = Math.floor(Math.random() * backgroundImages.length)
+        backgroundImage = `./src/assets/image/${backgroundImages[randomIndex]}.svg`
+        console.error('Invalid style, choose a random one:', backgroundImages[randomIndex])
     }
 
     const canvas = createCanvas(width, height)

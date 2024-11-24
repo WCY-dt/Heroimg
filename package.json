@@ -1,6 +1,6 @@
 {
   "name": "hero-image-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Heroimg is an image generator that transforms words into stunning visuals. You can use it to create images for your social media posts, blog posts, or any other purpose.",
   "main": "src/server.js",
   "scripts": {

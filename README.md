@@ -13,24 +13,24 @@ The API can be accessed via  [`https://heroimg.glitch.me/`](https://heroimg.glit
 
 Heroimg currently has only one API endpoint available, you should use the GET method to access it:
 
-| Method | URL | Description |
-|--------|-----|-------------|
-| `GET`    | [/hero](#hero-parameters) | Generate an image with text on it |
-| `GET`    | [/hero-experimental](#hero-parameters) | Generate an image with text on it (experimental functions enabled) |
+| **Method** | **URL** | **Description** |
+|:--:|:--:|:--:|
+| `GET` | [/hero](#hero-parameters) | Generate an image with text on it |
+| `GET` | [/hero-experimental](#hero-parameters) | Generate an image with text on it<br>(experimental functions enabled) |
 
 ### `/hero` Parameters
 
 The following parameters are available for the API:
 
-| Parameter   | Type   | Description                                      | Options                                                                 | Default            |
-|-------------|--------|--------------------------------------------------|------------------------------------------------------------------------|--------------------|
-| `title`     | string | Headline text to be displayed on the image       | /                                                                      | `NEED A TITLE`     |
-| `subtitle`  | string | Subtitle or copyright text to be displayed on the image | /                                                                      | /                  |
-| `style`     | string | Style of the image background                    | `blob`<br>`wave`<br>`blurry-gradient`<br>`blob-scene`<br>`layered-waves`<br>`layered-peaks` | `blurry-gradient`  |
-| `shape`     | string | Shape of the image                               | `16:9`<br>`4:3`<br>`1:1`                                               | `16:9`             |
-| `fontSize`  | number | Font size of the headline text                   | /                                                                      | `96`               |
-| `subFontSize` | number | Font size of the subtitle text                   | /                                                                      | fontSize / 2     |
-| `fontColor` | string | Color of the text                                | /                                                                      | `#ffffff`          |
+| **Parameter** | **Type** | **Description** | **Options** | **Default** |
+|:--:|:--:|:--:|:--:|:--:|
+| `title` | string | Headline text to be displayed on the image | / | `NEED A TITLE` |
+| `subtitle` | string | Subtitle or copyright text to be displayed on the image | / | / |
+| `style` | string | Style of the image background | `blob`<br>`wave`<br>`blurry-gradient`<br>`blob-scene`<br>`layered-waves`<br>`layered-peaks` | Randomly choose one |
+| `shape` | string | Shape of the image | `16:9`<br>`4:3`<br>`1:1` | `16:9` |
+| `fontSize` | number | Font size of the headline text | / | `96` |
+| `subFontSize` | number | Font size of the subtitle text | / | fontSize / 2 |
+| `fontColor` | string | Color of the text | / | `#ffffff` |
 
 #### Response
 
@@ -44,16 +44,16 @@ If the parameters are invalid, the API returns a `400 Bad Request` response and 
 
 #### Style Previews
 
-| `blob` | `wave` | `blurry-gradient` |
-|--------|--------|-------------------|
+| **`blob`** | **`wave`** | **`blurry-gradient`** |
+|:--:|:--:|:--:|
 | ![blob](https://heroimg.glitch.me/hero?style=blob&title=Heroimg&subTitle=blob) | ![wave](https://heroimg.glitch.me/hero?style=wave&title=Heroimg&subTitle=wave) | ![blurry-gradient](https://heroimg.glitch.me/hero?style=blurry-gradient&title=Heroimg&subTitle=blurry-gradient) |
-| `blob-scene` | `layered-waves` | `layered-peaks` |
+| **`blob-scene`** | **`layered-waves`** | **`layered-peaks`** |
 | ![blob-scene](https://heroimg.glitch.me/hero?style=blob-scene&title=Heroimg&subTitle=blob-scene) | ![layered-waves](https://heroimg.glitch.me/hero?style=layered-waves&title=Heroimg&subTitle=layered-waves) | ![layered-peaks](https://heroimg.glitch.me/hero?style=layered-peaks&title=Heroimg&subTitle=layered-peaks) |
 
 #### Size Previews
 
-| `16:9` | `4:3` | `1:1` |
-|--------|-------|-------|
+| **`16:9`** | **`4:3`** | **`1:1`** |
+|:--:|:--:|:--:|
 | ![16:9](https://heroimg.glitch.me/hero?shape=16:9&title=Heroimg&subTitle=16:9) | ![4:3](https://heroimg.glitch.me/hero?shape=4:3&title=Heroimg&subTitle=4:3) | ![1:1](https://heroimg.glitch.me/hero?shape=1:1&title=Heroimg&subTitle=1:1) |
 
 ## Self-hosting

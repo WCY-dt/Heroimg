@@ -28,9 +28,15 @@ The following parameters are available for the API:
 | `subFontSize` | number | Font size of the subtitle text                   | /                                                                      | `fontSize / 2`     |
 | `fontColor` | string | Color of the text                                | /                                                                      | `#ffffff`          |
 
+#### Response
+
+The API returns an image with the specified text on it. The image is in PNG format.
+
+If the parameters are invalid, the API returns a `400 Bad Request` response. If the image cannot be generated, the API returns a `500 Internal Server Error` response.
+
 #### Example
 
-[/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff](/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff)
+[https://heroimg.glitch.me/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff](https://heroimg.glitch.me/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff)
 
 #### Style Previews
 

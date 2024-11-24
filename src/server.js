@@ -20,6 +20,28 @@ app.get('/hero', async (req, res) => {
 
     console.log('Get a new request:\n\tTitle:', title, '\n\tSubTitle:', subTitle, '\n\tStyle:', style, '\n\tShape:', shape, '\n\tFont Size:', fontSize, '\n\tSub Font Size:', subFontSize, '\n\tFont Color:', fontColor)
 
+    // verify fontColor
+    reg = /^#[0-9a-fA-F]{6}$/i
+    if (!reg.test(fontColor)) {
+        console.error('Invalid font color:', fontColor)
+        res.status(400).send('Invalid font color')
+        return
+    }
+
+    // verify fontSize
+    if (isNaN(fontSize) || fontSize < 0) {
+        console.error('Invalid headline font size:', fontSize)
+        res.status(400).send('Invalid headline font size')
+        return
+    }
+
+    // verify subFontSize
+    if (isNaN(subFontSize) || subFontSize < 0) {
+        console.error('Invalid subtitle font size:', subFontSize)
+        res.status(400).send('Invalid subtitle font size')
+        return
+    }
+
     let width = null
     let height = null
     switch (shape) {
@@ -38,6 +60,7 @@ app.get('/hero', async (req, res) => {
             height = 540
             break
         default:
+            console.error('Invalid shape:', shape)
             width = 960
             height = 540
             break
@@ -64,6 +87,7 @@ app.get('/hero', async (req, res) => {
             backgroundImage = './src/assets/image/layered-peaks.svg'
             break
         default:
+            console.error('Invalid style:', style)
             backgroundImage = './src/assets/image/blurry-gradient.svg'
             break
     }
@@ -87,9 +111,9 @@ app.get('/hero', async (req, res) => {
             canvas.height
         )
     } catch (error) {
-        console.error('Error loading background image:', error)
-        ctx.fillStyle = '#000000'
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        console.error('Unexpected error:', error)
+        res.status(500).send('Unexpected error')
+        return
     }
 
     if (title) {

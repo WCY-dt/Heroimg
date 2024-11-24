@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            max-width: 1200px;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5em;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        code {
+            background-color: #f2f2f2;
+            border-radius: 3px;
+            word-break: keep-all;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heroimg Help Document</h1>
+    <p>Heroimg is an image generator that creates images with text on them. You can use it to create images for your social media posts, blog posts, or any other purpose.</p>
+    <h2>API</h2>
+    <p>Heroimg currently has only one API endpoint available, you should use the GET method to access it:</p>
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>URL</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td><a href="#hero">/hero</a></td>
+            <td>Generate an image with text on it</td>
+        </tr>
+    </table>
+    <h3 id="hero"><code>/hero</code> parameters</h3>
+    <p>The following parameters are available for the API:</p>
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Options</th>
+            <th>Default</th>
+        </tr>
+        <tr>
+            <td><code>title</code></td>
+            <td>string</td>
+            <td>Headline text to be displayed on the image</td>
+            <td>/</td>
+            <td><code>NEED A TITLE</code></td>
+        </tr>
+        <tr>
+            <td><code>subtitle</code></td>
+            <td>string</td>
+            <td>Subtitle or copyright text to be displayed on the image</td>
+            <td>/</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><code>style</code></td>
+            <td>string</td>
+            <td>Style of the image background</td>
+            <td>
+                <code>blob</code><br>
+                <code>wave</code><br>
+                <code>blurry-gradient</code><br>
+                <code>blob-scene</code><br>
+                <code>layered-waves</code><br>
+                <code>layered-peaks</code>
+            </td>
+            <td><code>blurry-gradient</code></td>
+        </tr>
+        <tr>
+            <td><code>shape</code></td>
+            <td>string</td>
+            <td>Shape of the image</td>
+            <td>
+                <code>16:9</code><br>
+                <code>4:3</code><br>
+                <code>1:1</code><br>
+            </td>
+            <td><code>16:9</code></td>
+        </tr>
+        <tr>
+            <td><code>fontSize</code></td>
+            <td>number</td>
+            <td>Font size of the headline text</td>
+            <td>/</td>
+            <td><code>96</code></td>
+        </tr>
+        <tr>
+            <td><code>subFontSize</code></td>
+            <td>number</td>
+            <td>Font size of the subtitle text</td>
+            <td>/</td>
+            <td>fontSize / 2</td>
+        </tr>
+        <tr>
+            <td><code>fontColor</code></td>
+            <td>string</td>
+            <td>Color of the text</td>
+            <td>/</td>
+            <td><code>#ffffff</code></td>
+        </tr>
+    </table>
+    <h4>Example</h4>
+    <p><a href="/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff">/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff</a></p>
+</body>
+</html>

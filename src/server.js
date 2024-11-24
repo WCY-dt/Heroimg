@@ -1,8 +1,13 @@
-import express from 'express'
-import { createCanvas, loadImage, registerFont } from 'canvas'
+const path = require('path');
+const express = require('express')
+const { createCanvas, loadImage, registerFont } = require('canvas')
 
 const app = express()
 const port = process.env.PORT || 3000
+
+app.get('/', (_, res) => {
+    res.sendFile(path.join(__dirname, 'assets', 'doc', 'help.html'));
+});
 
 app.get('/hero', async (req, res) => {
     const title = req.query.title || 'NEED A TITLE'
@@ -12,6 +17,8 @@ app.get('/hero', async (req, res) => {
     const fontSize = req.query.fontSize || 96
     const subFontSize = req.query.subFontSize || fontSize / 2
     const fontColor = req.query.fontColor || '#FFFFFF'
+
+    console.log('Get a new request:\n\tTitle:', title, '\n\tSubTitle:', subTitle, '\n\tStyle:', style, '\n\tShape:', shape, '\n\tFont Size:', fontSize, '\n\tSub Font Size:', subFontSize, '\n\tFont Color:', fontColor)
 
     let width = null
     let height = null

@@ -24,9 +24,9 @@ The following parameters are available for the API:
 
 | **Parameter** | **Type** | **Description** | **Options** | **Default** |
 |:--:|:--:|:--:|:--:|:--:|
-| `title` | string | Headline text to be displayed on the image | / | `NEED A TITLE` |
-| `subtitle` | string | Subtitle or copyright text to be displayed on the image | / | / |
-| `style` | string | Style of the image background | `blob`<br>`wave`<br>`blurry-gradient`<br>`blob-scene`<br>`layered-waves`<br>`layered-peaks` | Randomly choose one |
+| `title` | string | Headline text<br>to be displayed on the image | / | `NEED A TITLE` |
+| `subtitle` | string | Subtitle or copyright text<br>to be displayed on the image | / | / |
+| `style` | string | Style of the image background | `blob`<br>`wave`<br>`blurry-gradient`<br>`blob-scene`<br>`layered-waves`<br>`layered-peaks` | Randomly<br>choose<br>one |
 | `shape` | string | Shape of the image | `16:9`<br>`4:3`<br>`1:1` | `16:9` |
 | `fontSize` | number | Font size of the headline text | / | `96` |
 | `subFontSize` | number | Font size of the subtitle text | / | fontSize / 2 |

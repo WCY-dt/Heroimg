@@ -6,13 +6,13 @@ Heroimg is an image generator that transforms words into stunning visuals. You c
 
 ## API Usage
 
-Hero can be accessed via  [`https://heroimg.glitch.me/`](https://heroimg.glitch.me/).
+The API can be accessed via  [`https://heroimg.glitch.me/`](https://heroimg.glitch.me/).
 
 Heroimg currently has only one API endpoint available, you should use the GET method to access it:
 
 | Method | URL | Description |
 |--------|-----|-------------|
-| GET    | [/hero](#hero-parameters) | Generate an image with text on it |
+| `GET`    | [/hero](#hero-parameters) | Generate an image with text on it |
 
 ### `/hero` Parameters
 
@@ -25,18 +25,18 @@ The following parameters are available for the API:
 | `style`     | string | Style of the image background                    | `blob`<br>`wave`<br>`blurry-gradient`<br>`blob-scene`<br>`layered-waves`<br>`layered-peaks` | `blurry-gradient`  |
 | `shape`     | string | Shape of the image                               | `16:9`<br>`4:3`<br>`1:1`                                               | `16:9`             |
 | `fontSize`  | number | Font size of the headline text                   | /                                                                      | `96`               |
-| `subFontSize` | number | Font size of the subtitle text                   | /                                                                      | `fontSize / 2`     |
+| `subFontSize` | number | Font size of the subtitle text                   | /                                                                      | fontSize / 2     |
 | `fontColor` | string | Color of the text                                | /                                                                      | `#ffffff`          |
 
 #### Response
 
-The API returns an image with the specified text on it. The image is in PNG format.
+The API returns an image with the specified text on it. The image is in **PNG** format.
 
-If the parameters are invalid, the API returns a `400 Bad Request` response. If the image cannot be generated, the API returns a `500 Internal Server Error` response.
+If the parameters are invalid, the API returns a `400 Bad Request` response and gives detailed reasons. If the image cannot be generated, the API returns a `500 Internal Server Error` response.
 
 #### Example
 
-[https://heroimg.glitch.me/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff](https://heroimg.glitch.me/hero?title=Hello%20World&subtitle=Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=48&fontColor=%23ffffff)
+[https://heroimg.glitch.me/hero?title=Hello,%20World!&subTitle=Created%20by%20Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=32&fontColor=%23ffffff](https://heroimg.glitch.me/hero?title=Hello,%20World!&subTitle=Created%20by%20Heroimg&style=wave&shape=16:9&fontSize=96&subFontSize=32&fontColor=%23ffffff)
 
 #### Style Previews
 
@@ -54,14 +54,14 @@ If the parameters are invalid, the API returns a `400 Bad Request` response. If 
 
 This is a Node.js project. To host it yourself, you only need to clone this repository and run the following commands:
 
-```bash
+```shell
 npm install
 npm run start
 ```
 
 It also supports hot-reloading with `nodemon`:
 
-```bash
+```shell
 npm run dev
 ```
 

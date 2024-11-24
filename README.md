@@ -6,6 +6,9 @@ Heroimg is an image generator that transforms words into stunning visuals. You c
 
 ## API Usage
 
+> [!WARNING]
+> The project is still in early development, and the results of different versions may vary significantly.
+
 The API can be accessed via  [`https://heroimg.glitch.me/`](https://heroimg.glitch.me/).
 
 Heroimg currently has only one API endpoint available, you should use the GET method to access it:
@@ -13,6 +16,7 @@ Heroimg currently has only one API endpoint available, you should use the GET me
 | Method | URL | Description |
 |--------|-----|-------------|
 | `GET`    | [/hero](#hero-parameters) | Generate an image with text on it |
+| `GET`    | [/hero-experimental](#hero-parameters) | Generate an image with text on it (experimental functions enabled) |
 
 ### `/hero` Parameters
 
@@ -40,9 +44,11 @@ If the parameters are invalid, the API returns a `400 Bad Request` response and 
 
 #### Style Previews
 
-| `blob` | `wave` | `blurry-gradient` | `blob-scene` | `layered-waves` | `layered-peaks` |
-|--------|--------|-------------------|--------------|-----------------|-----------------|
-| ![blob](https://heroimg.glitch.me/hero?style=blob&title=Heroimg&subTitle=blob) | ![wave](https://heroimg.glitch.me/hero?style=wave&title=Heroimg&subTitle=wave) | ![blurry-gradient](https://heroimg.glitch.me/hero?style=blurry-gradient&title=Heroimg&subTitle=blurry-gradient) | ![blob-scene](https://heroimg.glitch.me/hero?style=blob-scene&title=Heroimg&subTitle=blob-scene) | ![layered-waves](https://heroimg.glitch.me/hero?style=layered-waves&title=Heroimg&subTitle=layered-waves) | ![layered-peaks](https://heroimg.glitch.me/hero?style=layered-peaks&title=Heroimg&subTitle=layered-peaks) |
+| `blob` | `wave` | `blurry-gradient` |
+|--------|--------|-------------------|
+| ![blob](https://heroimg.glitch.me/hero?style=blob&title=Heroimg&subTitle=blob) | ![wave](https://heroimg.glitch.me/hero?style=wave&title=Heroimg&subTitle=wave) | ![blurry-gradient](https://heroimg.glitch.me/hero?style=blurry-gradient&title=Heroimg&subTitle=blurry-gradient) |
+| `blob-scene` | `layered-waves` | `layered-peaks` |
+| ![blob-scene](https://heroimg.glitch.me/hero?style=blob-scene&title=Heroimg&subTitle=blob-scene) | ![layered-waves](https://heroimg.glitch.me/hero?style=layered-waves&title=Heroimg&subTitle=layered-waves) | ![layered-peaks](https://heroimg.glitch.me/hero?style=layered-peaks&title=Heroimg&subTitle=layered-peaks) |
 
 #### Size Previews
 

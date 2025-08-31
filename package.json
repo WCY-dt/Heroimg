@@ -11,7 +11,7 @@
   "author": "ch3nyang",
   "license": "MIT",
   "dependencies": {
-    "canvas": "^3.1.2",
+    "canvas": "^3.2.0",
     "express": "^5.1.0"
   },
   "devDependencies": {
